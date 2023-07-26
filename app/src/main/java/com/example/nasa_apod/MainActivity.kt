@@ -26,6 +26,7 @@ import androidx.compose.material3.DatePicker
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.rememberDatePickerState
 import androidx.compose.foundation.layout.Arrangement
+import com.example.nasa_apod.ui.NasaPhotosApp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,11 +38,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Column {
-                        NasaImg()
-                        SizeSlider()
-                        ImgDate()
-                    }
+                    NasaPhotosApp()
                 }
             }
         }
