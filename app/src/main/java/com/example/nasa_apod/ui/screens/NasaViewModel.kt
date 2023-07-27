@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import com.example.nasa_apod.network.NasaApi
-import com.example.nasa_apod.network.NasaPhoto
+import com.example.nasa_apod.model.NasaPhoto
 import java.io.IOException
 
 sealed interface NasaUiState {
@@ -37,7 +37,7 @@ class NasaViewModel : ViewModel() {
     private fun getNasaPhoto() {
         viewModelScope.launch {
             nasaUiState = try {
-                _photo.value = NasaApi.retrofitService.getPhotos("Fbc6i3XjnJIJcmQSZzwaMfojz9A5DIgQXJBbIIZE")
+                _photo.value = NasaApi.retrofitService.getPhoto("Fbc6i3XjnJIJcmQSZzwaMfojz9A5DIgQXJBbIIZE")
                 NasaUiState.Success(
                     _photo.value!!
                 )

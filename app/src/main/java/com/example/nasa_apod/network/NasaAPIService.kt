@@ -1,4 +1,5 @@
 package com.example.nasa_apod.network
+import com.example.nasa_apod.model.NasaPhoto
 import retrofit2.Retrofit
 import retrofit2.http.GET
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
@@ -17,7 +18,7 @@ private val retrofit = Retrofit.Builder()
 
 interface NasaAPIService {
     @GET("planetary/apod")
-    suspend fun getPhotos(@Query("api_key")api_key:String): NasaPhoto
+    suspend fun getPhoto(@Query("api_key")api_key:String): NasaPhoto
 }
 
 object NasaApi {

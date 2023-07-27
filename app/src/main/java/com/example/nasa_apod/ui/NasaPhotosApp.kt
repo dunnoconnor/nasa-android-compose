@@ -20,6 +20,7 @@ import com.example.nasa_apod.R
 import com.example.nasa_apod.ui.screens.HomeScreen
 import com.example.nasa_apod.ui.screens.NasaViewModel
 
+
 @Composable
 fun NasaPhotosApp() {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
@@ -38,7 +39,6 @@ fun NasaPhotosApp() {
         }
     }
 }
-
 @Composable
 fun NasaTopAppBar(scrollBehavior: TopAppBarScrollBehavior, modifier: Modifier = Modifier) {
     CenterAlignedTopAppBar(
